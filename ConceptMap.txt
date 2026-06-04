@@ -1,0 +1,70 @@
+Online	Voting	System	Roadmap	Concept
+=======================================
+4 Classes:
+- votersregistration.py
+- candidatelist.py
+- tally.py
+- listofvoters.py
+
+CONSOLE DASHBOARD UI CONCEPT
+==================== ONLINE VOTING SYSTEM ====================
+| Please select from the following options:
+[A] ========== Register Voter
+[B] ========== Cast Vote
+[C] ========== View Candidate List
+[D] ========== View Registered Voters List
+[E] ========== Exit Program
+
+
+CONSOLE REGISTER VOTER UI CONCEPT
+==================== VOTER'S REGISTRATION FORM ====================
+First Name:
+Last Name:
+Voter's Key/ID Number:
+
+Voter Registered Successfully!
+
+
+CONSOLE CAST VOTE UI CONCEPT
+===========================  CAST VOTE  ===========================
+Enter Voter's Key/ID Number:
+
+| Voter ID Not Found
+| Voter ID Found. Proceed...
+
+Democratic Party		 |		Republican Party
+			   Presidential
+[A]. Candidate A				[D]. Candidate A
+[B]. Candidate B				[E]. Candidate B
+[C]. Candidate C 	
+
+| Please select from the following options:
+| The selected option is unavailable from the list.
+
+
+CONSOLE VIEW CANDIDATE LIST UI CONCEPT
+========================= CANDIDATE LIST =========================
+Democratic Party		|	 	Republican Party
+			   Presidential
+A. Candidate A					A. Candidate A
+B. Candidate B					B. Candidate B
+C. Candidate C 	
+			 Vice Presidential
+A. Candidate A					A. Candidate A
+B. Candidate B					B. Candidate B
+						C. Candidate C
+
+[A] Back
+| The selected option is unavailable.
+
+CONSOLE VIEW REGISTERED VOTERS LIST UI CONCEPT
+========================= VOTER'S LIST =========================
+A. First Name:			  	| John
+   Last Name:			  	| Doe
+   Voter's Key/ID Number: 	  	| 015827ABC
+B. First Name:			  	| Mark
+   Last Name:			  	| Garcia
+   Voter's Key/ID Number: 	  	| 015838ABC
+
+[A] Back
+| The selected option is unavailable.
