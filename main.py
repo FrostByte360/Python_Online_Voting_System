@@ -2,6 +2,8 @@ import random
 
 from registerVoter import Register
 
+# FUNCTIONS
+# ======================================================================================================================
 
 def optionDescription():
     print("\n------------- VOTER'S REGISTRATION FORM -------------")
@@ -51,7 +53,7 @@ while True:
 
 
         case "B":
-            print("The feeling's quite bizarre")
+            print("B")
 
 
         case "C":
