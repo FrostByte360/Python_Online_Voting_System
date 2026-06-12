@@ -1,0 +1,6 @@
+LIST OF REGSITERED VOTERS:
+======================================
+First Name   Last Name    Voter Key/ID
+
+Mark         Garcia       ****-***-*****
+Alisson      Reyes        ****-***-*****
