@@ -6,9 +6,14 @@ from registerVoter import Register
 # FUNCTIONS
 # ======================================================================================================================
 
-def optionDescription():
+def optionDescriptionA():
     print("\n------------- VOTER'S REGISTRATION FORM -------------")
     print("| Please fill in the necessary forms for registration.")
+
+def optionDescriptionD():
+    print("\n------------- REGISTERED VOTER'S LIST -------------")
+    print("| The following is the list of people")
+    print("| registered to vote.")
 
 # MAIN()
 # ======================================================================================================================
@@ -25,7 +30,7 @@ while True:
     match option:
         case "A":
             print(f"\nYou Selected: {option}")
-            optionDescription()
+            optionDescriptionA()
             fname = input("First Name: ")
             lname = input("Last Name: ")
 
@@ -57,6 +62,7 @@ while True:
 
 
         case "D":
+            optionDescriptionD()
             allowVisibility = ViewList()
             allowVisibility.showList()
 
