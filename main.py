@@ -1,5 +1,6 @@
 import random
 
+from listOfVoters import ViewList
 from registerVoter import Register
 
 # FUNCTIONS
@@ -56,7 +57,8 @@ while True:
 
 
         case "D":
-            print('D')
+            allowVisibility = ViewList()
+            allowVisibility.showList()
 
 
         case "E":

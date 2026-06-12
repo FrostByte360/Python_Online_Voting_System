@@ -4,3 +4,5 @@ First Name   Last Name    Voter Key/ID
 
 Mark         Garcia       ****-***-*****
 Alisson      Reyes        ****-***-*****
+Jennifer     Lopez        ****-***-*****
+Markus       Person       ****-***-*****

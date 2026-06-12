@@ -4,3 +4,5 @@ First Name   Last Name    Voter Key/ID
 
 Mark         Garcia       325T-YVR-325PC
 Alisson      Reyes        649K-UDZ-649YV
+Jennifer     Lopez        577F-KBM-577PX
+Markus       Person       826E-EBE-826TF
