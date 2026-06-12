@@ -47,11 +47,6 @@ while True:
             voter = Register(fname, lname, id)
             voter.showAndUpdateInfo()
 
-
-
-
-
-
         case "B":
             print("B")
 
