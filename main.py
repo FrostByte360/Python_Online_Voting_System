@@ -15,6 +15,11 @@ def optionDescriptionD():
     print("| The following is the list of people")
     print("| registered to vote.")
 
+def optionDescriptionB():
+    print("\n------------- CAST VOTE -------------")
+    print("| Please enter your Name and Voter's Key/ID")
+    print("| for validation.")
+
 # MAIN()
 # ======================================================================================================================
 
@@ -22,7 +27,7 @@ try:
     while True:
         print("\nOnline Voting System")
         print("=============== ONLINE VOTING SYSTEM ===============")
-        print("[A] ========== Register Voter\n[B] ========== Cast Vote")
+        print("[A] ========== Register\n[B] ========== Cast Vote")
         print("[C] ========== View Candidate List\n[D] ========== View Registered Voters List")
         print("[E] ========== Exit Program")
 
@@ -55,9 +60,8 @@ try:
                 voter.showAndUpdateInfo()
 
             case "B":
-
+                print(f"\nYou Selected: {option}")
                 path = "C:/Users/User/OneDrive/Documents/Programming/Python_Projects/Python_Online_Voting_System/pseudodata/voterslist.txt"
-
 
                 def verify_user(input_first, input_last, input_id):
                     try:
@@ -89,29 +93,37 @@ try:
 
                     return False  # If the loop finishes without finding a match
 
-
                 # --- Simulating the Sign-In Form ---
-                print("--- MINI SIGN-IN FORM ---")
+                optionDescriptionB()
                 entered_first = input("Enter First Name: ").strip()
                 entered_last = input("Enter Last Name: ").strip()
                 entered_id = input("Enter User ID: ").strip()
 
                 if verify_user(entered_first, entered_last, entered_id):
-                    print("\n✅ Access Granted! Welcome back.")
+                    print(f"\n🟩 Access Granted! Welcome, {entered_first} {entered_last}!.")
                     # Put the "something" they wanted to do right here!
+
+
+
+
+
+
                 else:
-                    print("\n❌ Access Denied! Incorrect Name or User ID.")
+                    print("\n🔴 Incorrect Name or User ID.")
 
             case "C":
+                print(f"\nYou Selected: {option}")
                 print('C')
 
             case "D":
+                print(f"\nYou Selected: {option}")
                 optionDescriptionD()
                 allowVisibility = ViewList()
                 allowVisibility.showList()
 
             case "E":
-                print('E')
+                print(f"\nYou Selected: {option}")
+                print("Closing Program...")
                 break
 
             case _:
