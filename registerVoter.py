@@ -11,7 +11,7 @@ class Register:
 
         # PRIVATE ACCESS | NOT FOR VIEWING
         try:
-            path = "C:/Users/User/OneDrive/Documents/Programming/Python_Projects/Python_Online_Voting_System/pseudodata/voterslist.txt"
+            path = "C:/Users/HomePC/Downloads/project program/pycharm/Python_Online_Voting_System/pseudodata/voterslist.txt"
 
             formatted_lines = []
             formatted_lines.append(f"{self.firstName:<12} {self.lastName:<12} {self.__voterID:<6}")
@@ -23,7 +23,7 @@ class Register:
 
         # PUBLIC ACCESS | ONLY FOR VIEWING
         try:
-            path = "C:/Users/User/OneDrive/Documents/Programming/Python_Projects/Python_Online_Voting_System/pseudodata/voterslistPRIVATE.txt"
+            path = "C:/Users/HomePC/Downloads/project program/pycharm/Python_Online_Voting_System/pseudodata/voterslistPRIVATE.txt"
 
             secretID = "****-***-*****"
             formatted_lines = []

@@ -2,6 +2,8 @@ import random
 
 from listOfVoters import ViewList
 from registerVoter import Register
+from candidatelist import ViewCandidates
+from tally import TallySystem
 
 # FUNCTIONS
 # ======================================================================================================================
@@ -19,6 +21,9 @@ def optionDescriptionB():
     print("\n------------- CAST VOTE -------------")
     print("| Please enter your Name and Voter's Key/ID")
     print("| for validation.")
+
+candidate_viewer = ViewCandidates()
+tally_manager = TallySystem()
 
 # MAIN()
 # ======================================================================================================================
@@ -61,7 +66,7 @@ try:
 
             case "B":
                 print(f"\nYou Selected: {option}")
-                path = "C:/Users/User/OneDrive/Documents/Programming/Python_Projects/Python_Online_Voting_System/pseudodata/voterslist.txt"
+                path = "C:/Users/HomePC/Downloads/project program/pycharm/Python_Online_Voting_System/pseudodata/voterslist.txt"
 
                 def verify_user(input_first, input_last, input_id):
                     try:
@@ -103,17 +108,60 @@ try:
                     print(f"\n🟩 Access Granted! Welcome, {entered_first} {entered_last}!.")
                     # Put the "something" they wanted to do right here!
 
+                    if tally_manager.has_already_voted(entered_id):
+                        print("\n🔴 Security Alert: You have already cast your vote!")
+                        continue
 
+                    print("| Proceed...\n")
 
+                    # Display layout once for baseline reference
+                    candidate_viewer.print_ballot_layout()
+                    print("=======================================================================")
+                    print("\n--- BEGIN SEPARATE CATEGORY BALLOT VOTING ---")
 
+                    # 1. PRESIDENTIAL SELECTION LOOP
+                    while True:
+                        print("\n[ Presidential Bracket Options: A or B ]")
+                        p_choice = input("| Choose Presidential Candidate: ").strip().upper()
+                        if p_choice in ["A", "B"]:
+                            break
+                        print("| Invalid selection. Please pick A or B for Presidential.")
 
+                    # 2. VICE PRESIDENTIAL SELECTION LOOP
+                    while True:
+                        print("\n[ Vice Presidential Bracket Options: A or B ]")
+                        vp_choice = input("| Choose Vice Presidential Candidate: ").strip().upper()
+                        if vp_choice in ["A", "B"]:
+                            break
+                        print("| Invalid selection. Please pick A or B for Vice Presidential.")
+
+                    # 3. SECRETARIAL SELECTION LOOP
+                    while True:
+                        print("\n[ Secretarial Bracket Options: A, B, C, or D ]")
+                        sec_choice = input("| Choose Secretarial Candidate: ").strip().upper()
+                        if sec_choice in ["A", "B", "C", "D"]:
+                            break
+                        print("| Invalid selection. Please pick A, B, C, or D for Secretarial.")
+
+                    # 4. TREASURER SELECTION LOOP
+                    while True:
+                        print("\n[ Treasurer Bracket Options: A, B, C, or D ]")
+                        treas_choice = input("| Choose Treasurer Candidate: ").strip().upper()
+                        if treas_choice in ["A", "B", "C", "D"]:
+                            break
+                        print("| Invalid selection. Please pick A, B, C, or D for Treasurer.")
+
+                    # Package and write the separate categories to tally data log
+                    success = tally_manager.record_votes(entered_id, p_choice, vp_choice, sec_choice, treas_choice)
+                    if success:
+                        print("\n🟩 All category ballots recorded successfully! Voted Successfully!")
 
                 else:
                     print("\n🔴 Incorrect Name or User ID.")
 
             case "C":
                 print(f"\nYou Selected: {option}")
-                print('C')
+                candidate_viewer.showCandidates()
 
             case "D":
                 print(f"\nYou Selected: {option}")
@@ -123,6 +171,7 @@ try:
 
             case "E":
                 print(f"\nYou Selected: {option}")
+                tally_manager.display_results()
                 print("Closing Program...")
                 break
 
