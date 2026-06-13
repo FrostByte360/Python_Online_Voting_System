@@ -54,7 +54,51 @@ while True:
             voter.showAndUpdateInfo()
 
         case "B":
-            print("B")
+
+            path = "C:/Users/User/OneDrive/Documents/Programming/Python_Projects/Python_Online_Voting_System/pseudodata/voterslist.txt"
+
+            def verify_user(input_first, input_last, input_id):
+                try:
+                    with open(path, "r") as file:
+                        # Skip the header line (First Name   Last Name...)
+                        next(file)
+
+                        # Check every user row
+                        for line in file:
+                            # .split() breaks the line into a list of words, ignoring extra spaces
+                            # Example: "John       Smith      ID123\n" -> ["John", "Smith", "ID123"]
+                            parts = line.split()
+
+                            # Safety check: make sure the line actually has 3 pieces of data
+                            if len(parts) == 3:
+                                file_first = parts[0]
+                                file_last = parts[1]
+                                file_id = parts[2]
+
+                                # Check for an exact match (case-insensitive for names)
+                                if (file_first.lower() == input_first.lower() and
+                                        file_last.lower() == input_last.lower() and
+                                        file_id == input_id):
+                                    return True  # Access Granted! Match found.
+
+                except FileNotFoundError:
+                    print("Error: The user database file does not exist yet.")
+                    return False
+
+                return False  # If the loop finishes without finding a match
+
+
+            # --- Simulating the Sign-In Form ---
+            print("--- MINI SIGN-IN FORM ---")
+            entered_first = input("Enter First Name: ").strip()
+            entered_last = input("Enter Last Name: ").strip()
+            entered_id = input("Enter User ID: ").strip()
+
+            if verify_user(entered_first, entered_last, entered_id):
+                print("\n✅ Access Granted! Welcome back.")
+                # Put the "something" they wanted to do right here!
+            else:
+                print("\n❌ Access Denied! Incorrect Name or User ID.")
 
 
         case "C":
