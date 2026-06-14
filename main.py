@@ -189,4 +189,4 @@ except IndexError:
 except NameError as e:
     print(f"\n[!] Developer Error: A required function or module is missing: {e}")
 except ValueError:
-    print("Error: The user database file does not exist yet.")
+    print("\n[!] Error: Invalid Input Type entered.")
