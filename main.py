@@ -1,4 +1,6 @@
 import random
+import time
+import sys
 
 from listOfVoters import ViewList
 from registerVoter import Register
@@ -22,6 +24,14 @@ def optionDescriptionB():
     print("| Please enter your Name and Voter's Key/ID")
     print("| for validation.")
 
+def effects(text, delay=0.1):
+    """Prints text character by character with a specific delay."""
+    for char in text:
+        sys.stdout.write(char)
+        sys.stdout.flush() # Forces the character onto the screen immediately
+        time.sleep(delay)
+    print() # Moves to a new line once finished
+
 candidate_viewer = ViewCandidates()
 tally_manager = TallySystem()
 
@@ -34,7 +44,8 @@ try:
         print("=============== ONLINE VOTING SYSTEM ===============")
         print("[A] ========== Register\n[B] ========== Cast Vote")
         print("[C] ========== View Candidate List\n[D] ========== View Registered Voters List")
-        print("[E] ========== Exit Program")
+        print("\n[E] ========== Show Results")
+        print("\n[F] ========== Exit Program")
 
         option = input("| Please select from the following options: ").strip().upper()
 
@@ -66,7 +77,7 @@ try:
 
             case "B":
                 print(f"\nYou Selected: {option}")
-                path = "C:/Users/HomePC/Downloads/project program/pycharm/Python_Online_Voting_System/pseudodata/voterslist.txt"
+                path = "C:/Users/User/OneDrive/Documents/Programming/Python_Projects/Python_Online_Voting_System/pseudodata/voterslist.txt"
 
                 def verify_user(input_first, input_last, input_id):
                     try:
@@ -171,7 +182,20 @@ try:
 
             case "E":
                 print(f"\nYou Selected: {option}")
-                tally_manager.display_results()
+                print("\n\nThe Moment of Truth...")
+                print("\n" + "=" * 74)
+                print("Fetching Results")
+                effects("| #####", delay=0.5)
+                print("Decrypting Ballot Box")
+                effects("| #####", delay=0.5)
+                print("Printing Winners")
+                effects("| #####", delay=0.5)
+                print("=" * 74)
+                reveal = TallySystem()
+                reveal.display_results()
+
+            case "F":
+                print(f"\nYou Selected: {option}")
                 print("Closing Program...")
                 break
 
